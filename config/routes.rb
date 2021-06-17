@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/1_product", controller: "products", action: "get_1_product"
   get "/product/:input" => "products#get_product_by_params"
   get "/product" => "products#get_product_by_params"
+  get "/product/:name/:id" => "products#render_params"
 end
