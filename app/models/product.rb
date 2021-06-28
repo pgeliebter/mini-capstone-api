@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   validates :name, :price, :description, presence: true
   validates :name, uniqueness: true
   validates :price, numericality: true
-  has_many :supplier
+  belongs_to :supplier
   # validates :description, presence: true
 
   # def supplier
