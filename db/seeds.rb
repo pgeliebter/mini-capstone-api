@@ -16,3 +16,12 @@ Product.create!([
   { name: "Aqua Lung Calypso Regulator", price: "250.0", image_url: "https://us.aqualung.com/dw/image/v2/BDTB_PRD/on/demandware.static/-/Sites-aqualung-m-catalog/default/dwe5dd1c64/images/products/rg126111_1.jpg?sw=765&sh=765", description: "Something to keep you alive underwater. Buy it or else the consenquences will be dire.", inventory: 2, supplier_id: 2 },
   { name: "Cherry Coke Zero", price: "1.0", image_url: "https://us.coca-cola.com/content/dam/nagbrands/us/coke/en/products/coca-cola-flavors/cherry/zero-sugar/cherry-zero-sugar_12oz_desktop.jpg", description: "The most awesomest soda of all time, every time.", inventory: 1, supplier_id: 1 },
 ])
+Order.create!([
+
+  { user_id: 1, product_id: 3, quantity: 2, subtotal: "24.0", tax: "2.16", total: "26.16" },
+  { user_id: 1, product_id: 3, quantity: 9, subtotal: "108.0", tax: "9.72", total: "117.72" },
+  { user_id: 1, product_id: 1, quantity: 9, subtotal: "90.0", tax: "8.1", total: "98.1" },
+])
+User.create!([
+  { name: "Pinny", email: "pinny@example.com", password_digest: "$2a$12$L6GGELXnzC8HB6DxIEbkRuKGGEks5wTL.ZjsnYiugz.FTgtVlvrnC" },
+])
