@@ -47,7 +47,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'seed_dump'
 gem 'jwt'
 
-group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-end
+# group :development do
+#   gem "better_errors"
+#   gem "binding_of_caller"
+# end

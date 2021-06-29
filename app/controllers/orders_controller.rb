@@ -5,5 +5,10 @@ class OrdersController < ApplicationController
       product_id: params[:product_id],
       quantity: params[:quantity],
     )
+    if order.save
+      render json: order
+    else
+      render json: order.errors
+    end
   end
 end
