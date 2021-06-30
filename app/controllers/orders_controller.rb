@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def create
     product = Product.find(params[:product_id])
     quant = params[:quantity].to_i
@@ -15,17 +17,12 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find(params[:id])
-
-    if order
-      render json: order
-    else
-      render json: { error: "that order can't be found" }
-    end
+    order = current_user.orders.find_by(id: params[:id])
+    render json: order
   end
 
   def index
-    orders = Order.all
+    orders = current_user.orders
 
     render json: orders
   end
