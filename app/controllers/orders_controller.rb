@@ -17,24 +17,16 @@ class OrdersController < ApplicationController
   def show
     order = Order.find(params[:id])
 
-    if current_user
-      if order
-        render json: order
-      else
-        render json: { error: "that order can't be found" }
-      end
+    if order
+      render json: order
     else
-      render status: 401
+      render json: { error: "that order can't be found" }
     end
   end
 
   def index
-    if current_user
-      orders = Order.all
+    orders = Order.all
 
-      render json: orders
-    else
-      render status: 401
-    end
+    render json: orders
   end
 end
