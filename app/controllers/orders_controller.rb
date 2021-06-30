@@ -11,11 +11,7 @@ class OrdersController < ApplicationController
                       subtotal: calculated_subtotal,
                       tax: calculated_tax,
                       total: calculated_total)
-    if order.save
-      render json: order
-    else
-      render json: order.errors
-    end
+    order.save ? (render json: order) : (render json: order.errors)
   end
 
   def show
@@ -33,8 +29,9 @@ class OrdersController < ApplicationController
   end
 
   def index
-    orders = Order.all
     if current_user
+      orders = Order.all
+
       render json: orders
     else
       render status: 401

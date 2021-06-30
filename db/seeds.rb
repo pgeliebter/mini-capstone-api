@@ -1,3 +1,6 @@
+User.create!([
+  { name: "Pinny", email: "pinny@example.com", password_digest: "$2a$12$L6GGELXnzC8HB6DxIEbkRuKGGEks5wTL.ZjsnYiugz.FTgtVlvrnC" },
+])
 Supplier.create!([
   { name: "Blizzard Entertainment", email: "games@blizzard.com", phone_number: "333-333-3333" },
   { name: "Aqualung", email: "aqua@lung.com", phone_number: "444-444-4444" },
@@ -21,7 +24,4 @@ Order.create!([
   { user_id: 1, product_id: 3, quantity: 2, subtotal: "24.0", tax: "2.16", total: "26.16" },
   { user_id: 1, product_id: 3, quantity: 9, subtotal: "108.0", tax: "9.72", total: "117.72" },
   { user_id: 1, product_id: 1, quantity: 9, subtotal: "90.0", tax: "8.1", total: "98.1" },
-])
-User.create!([
-  { name: "Pinny", email: "pinny@example.com", password_digest: "$2a$12$L6GGELXnzC8HB6DxIEbkRuKGGEks5wTL.ZjsnYiugz.FTgtVlvrnC" },
 ])
