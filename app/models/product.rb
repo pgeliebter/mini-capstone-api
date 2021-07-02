@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :price, numericality: true
   belongs_to :supplier
   has_many :orders
+  has_many :product_categories
   # validates :description, presence: true
 
   # def supplier
