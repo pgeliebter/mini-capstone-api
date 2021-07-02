@@ -2,7 +2,12 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    products = Product.all
+    #  the below code is supposed to allow a user to use params to filter products based off a category. Not fully working yet.
+    # if params[:category]
+    #   products = Category.find_by(name: params[:category])
+    # else
+    #   products = Product.all
+    # end
     render json: products
   end
 
