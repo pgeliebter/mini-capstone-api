@@ -52,3 +52,4 @@ gem 'jwt'
 #   gem "binding_of_caller"
 # end
 
+gem 'rails-erd', group: :development
