@@ -3,9 +3,11 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
   validates :price, numericality: true
   belongs_to :supplier
-  has_many :orders
   has_many :product_categories
+  has_many :orders, through: :carted_products
   has_many :categories, through: :product_categories
+  has_many :carted_products
+
   # validates :description, presence: true
 
   # def supplier
