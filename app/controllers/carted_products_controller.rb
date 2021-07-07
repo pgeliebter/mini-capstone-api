@@ -8,7 +8,14 @@ class CartedProductsController < ApplicationController
       product_id: product.id,
       quantity: quant,
       user_id: current_user.id,
+      status: "carted",
     )
     carted_product.save ? (render json: carted_product) : (render json: carted_product.errors)
+  end
+
+  def index
+    cart = current_user.carted_products
+
+    render json: cart
   end
 end
