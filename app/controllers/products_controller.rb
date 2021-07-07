@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     # else
     #   products = Product.all
     # end
+    products = Product.all
     render json: products
   end
 
